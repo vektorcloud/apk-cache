@@ -1,5 +1,5 @@
 FROM alpine:latest
-MAINTAINER Bradley Cicenas <bradley.cicenas@gmail.com>
+MAINTAINER VektorLab <docker@vektor.nyc>
 
 RUN apk add --update nginx wget && \
     mkdir -p /srv/www /srv/www_tmp && \
