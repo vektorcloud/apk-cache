@@ -1,7 +1,7 @@
 FROM quay.io/vektorcloud/base:latest
 MAINTAINER VektorLab <docker@vektor.nyc>
 
-RUN apk add --update nginx wget && \
+RUN apk add --no-cache nginx wget && \
     mkdir -p /srv/www /srv/www_tmp && \
     cd /srv/www && \
     wget --force-directories \
