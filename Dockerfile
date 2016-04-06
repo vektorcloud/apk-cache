@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM quay.io/vektorcloud/base:latest
 MAINTAINER VektorLab <docker@vektor.nyc>
 
 RUN apk add --update nginx wget && \
