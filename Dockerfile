@@ -1,4 +1,4 @@
-FROM quay.io/vektorcloud/base:3.4
+FROM quay.io/vektorcloud/base:3.5
 MAINTAINER VektorLab <docker@vektor.nyc>
 
 RUN apk add --no-cache nginx wget && \
