@@ -11,7 +11,7 @@ docker run -d --name=apk-cache quay.io/vektorcloud/apk-cache:latest
 
 After apk-cache is up, start any subsquent containers with a link to the cache:
 ```bash 
-docker run -ti --link apk-cache:dl-4.alpinelinux.org alpine:latest /bin/sh
+docker run -ti --link apk-cache:dl-cdn.alpinelinux.org alpine:latest /bin/sh
 ```
 
 To alternatively avoid having to link every running container, publish port 80 to the host:
@@ -19,4 +19,4 @@ To alternatively avoid having to link every running container, publish port 80 t
 docker run -d -p 80:80 --name=apk-cache quay.io/vektorcloud/apk-cache:latest
 ```
 
-and override resolution of dl-4.alpinelinux.org using the IP of the Docker host via dnsmasq or the docker run option `--add-host dl-4.alpinelinux.org:<HOST-IP>`
+and override resolution of dl-cdn.alpinelinux.org using the IP of the Docker host via dnsmasq or the docker run option `--add-host dl-cdn.alpinelinux.org:<HOST-IP>`
