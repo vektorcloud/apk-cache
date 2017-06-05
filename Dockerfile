@@ -1,4 +1,4 @@
-FROM quay.io/vektorcloud/base:3.5
+FROM quay.io/vektorcloud/base:3.6
 MAINTAINER VektorLab <docker@vektor.nyc>
 
 RUN apk add --no-cache nginx wget && \
@@ -7,7 +7,7 @@ RUN apk add --no-cache nginx wget && \
     wget --force-directories \
          --no-host-directories \
          -qr --level=1 -R '*.html*,*.gif' \
-         http://dl-4.alpinelinux.org/alpine/ && \
+         http://dl-cdn.alpinelinux.org/alpine/ && \
     chown -Rf nginx. /srv/www*
 
 COPY nginx.conf /etc/nginx/nginx.conf
