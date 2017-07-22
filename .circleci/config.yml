@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/build
+    docker:
+      - image: quay.io/vektorcloud/cibase:latest
+    steps:
+      - checkout
+      - setup_remote_docker:
+          version: 17.05.0-ce
+      - run: docker build -t ${CIRCLE_PROJECT_REPONAME} .
+      - deploy: 
+          command: |
+            if [[ "$CIRCLE_BRANCH" == "master" ]]; then
+              docker tag ${CIRCLE_PROJECT_REPONAME} quay.io/vektorcloud/${CIRCLE_PROJECT_REPONAME}:latest
+            else
+              docker tag ${CIRCLE_PROJECT_REPONAME} quay.io/vektorcloud/${CIRCLE_PROJECT_REPONAME}:${CIRCLE_BRANCH}
+            fi
+            docker login -u $DOCKER_USER -p $DOCKER_PASS quay.io
+            docker push quay.io/vektorcloud/${CIRCLE_PROJECT_REPONAME}
