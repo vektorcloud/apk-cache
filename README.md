@@ -23,4 +23,4 @@ docker run -d -p 80:80 --name=apk-cache quay.io/vektorcloud/apk-cache:latest
 
 and override resolution of dl-cdn.alpinelinux.org using the IP of the Docker host via dnsmasq or the docker run option `--add-host dl-cdn.alpinelinux.org:<HOST-IP>`
 
-[circleci]: https://img.shields.io/circleci/project/github/vektorcloud/apk-cache.svg "apk-cache"
+[circleci]: https://img.shields.io/circleci/build/gh/vektorcloud/apk-cache?color=1dd6c9&logo=CircleCI&logoColor=1dd6c9&style=for-the-badge "apk-cache"
