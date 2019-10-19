@@ -1,6 +1,6 @@
 # apk-cache
 
-![circleci][circleci]
+[![circleci][circleci]](https://circleci.com/gh/vektorcloud/apk-cache)
 
 Simple apk package cache for Alpine Linux
 
